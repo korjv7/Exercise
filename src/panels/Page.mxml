@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx">
+	
+	
+	
+	
+	<s:VGroup width="100%" gap="0" top="0" height="100%">
+		<!--********** TOOLBAR **********-->
+		<s:Group id="toolBarGroup" width="100%" >
+			<!--border around toolbar-->
+			<s:Rect left="0" right="0" top="0" height="54" topLeftRadiusX="5" topLeftRadiusY="5" topRightRadiusX="5" topRightRadiusY="5">
+				<s:stroke>
+					<s:SolidColorStroke color="0x6b6b6b"/>
+				</s:stroke>
+			</s:Rect>
+			<s:Group top="1" left="1" right="1">
+				<!--toolbar background-->
+				<s:VGroup width="100%" gap="0">
+					<s:Group width="100%" height="25">
+						<!--presentation heading at the top-->
+						<s:HGroup horizontalCenter="0" paddingTop="3" gap="5">
+							<s:BitmapImage source="@Embed('/assets/icons/tb/calc.png')"/>
+							<s:Group height="100%">
+								<s:Label text="Page1" color="0x353535" bottom="0" fontSize="13"/>
+							</s:Group>
+						</s:HGroup>
+					</s:Group>
+					
+				</s:VGroup>
+			</s:Group>
+		</s:Group>
+		<!--********** MAIN CONTENT **********-->
+		<s:HGroup width="100%" height="100%" gap="0">
+			<!--group that contains right (the most inportant) area of the main content panel-->
+			<s:Group width="100%" height="100%" clipAndEnableScrolling="true">
+				<!--canvas-->
+				<s:HGroup horizontalCenter="0%" paddingTop="3" gap="5">
+					<s:BitmapImage source="@Embed('/ui/canvas/canvas.png')"/>
+				</s:HGroup>
+			</s:Group>
+		</s:HGroup>
+	</s:VGroup>
+</s:Group>
