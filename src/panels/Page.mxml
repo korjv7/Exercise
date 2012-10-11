@@ -2,12 +2,12 @@
 <s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
                xmlns:s="library://ns.adobe.com/flex/spark"
                xmlns:mx="library://ns.adobe.com/flex/mx"
-               width="100%"
-               height="100%"
-               xmlns:local="ui.DataGrid.*"
-			   xmlns:panel="ui.Scale.*">
+               xmlns:panel="ui.DataGrid.*"
+			   xmlns:local="ui.Scale.*"
+			   xmlns:local2="ui.Ribbon.*">
 
-    <local:DataGrid width="100%" height="100%"/>
-	<panel:Scale/>
+    <panel:DataGrid/>
+	<local:Scale/>
+	<local2:Ribbon left="700"/>
 
 </s:Application>
