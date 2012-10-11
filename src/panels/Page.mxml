@@ -4,8 +4,10 @@
                xmlns:mx="library://ns.adobe.com/flex/mx"
                width="100%"
                height="100%"
-               xmlns:local="ui.DataGrid.*">
+               xmlns:local="ui.DataGrid.*"
+			   xmlns:panel="ui.Scale.*">
 
-    <local:DataGrid/>
+    <local:DataGrid width="100%" height="100%"/>
+	<panel:Scale/>
 
 </s:Application>
