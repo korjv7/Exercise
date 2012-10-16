@@ -30,9 +30,9 @@
 	</s:Rect>
 	
 	<s:BitmapImage left="1" right="1" bottom="0" top="0"
-				   source.up="@Embed('F:/oblakogroup-PowerPoint-8882a27/src/assets/skinParts/comboboxButtonGradient.png')"
-				   source.over="@Embed('F:/oblakogroup-PowerPoint-8882a27/src/assets/skinParts/comboboxButtonGradient-over.png')"
-				   source.down="@Embed('F:/oblakogroup-PowerPoint-8882a27/src/assets/skinParts/comboboxButtonGradient-down.png')"
+				   source.up="@Embed('/assets/skinParts/comboboxButtonGradient.png')"
+				   source.over="@Embed('/assets/skinParts/comboboxButtonGradient-over.png')"
+				   source.down="@Embed('/assets/skinParts/comboboxButtonGradient-down.png')"
 					/>
 	<s:Rect width="1" right="0" top="0" bottom="0">
 		<s:fill>
