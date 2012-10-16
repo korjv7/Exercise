@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
             xmlns:s="library://ns.adobe.com/flex/spark"
             xmlns:mx="library://ns.adobe.com/flex/mx">
 
 	<s:DataGrid width="500" left="180" skinClass="skins.DataGridSkin"
 				enterState="false" variableRowHeight="true"
 				editable="true"
-				selectionMode="multipleCells" caretColor="0x000000">
+				selectionMode="multipleCells" caretColor="0x000000" sortableColumns="false">
 		<s:ArrayCollection>
 			<fx:Object>
 				<fx:A></fx:A> <fx:B></fx:B> <fx:C></fx:C>
@@ -49,4 +49,4 @@
 			</s:ArrayCollection>
 		</s:columns>
 	</s:DataGrid>
-</s:Application>
+</s:Group>

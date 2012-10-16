@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:s="library://ns.adobe.com/flex/spark">
+    
+	<s:ComboBox labelField="name" requireSelection="true"
+				skinClass="ui.ComboBox_e.ComboBoxSkin"
+				itemRenderer="spark.skins.spark.DefaultComplexItemRenderer">
+        <s:dataProvider>
+            <s:ArrayCollection>
+                <s:HGroup name="Общий">
+					<s:BitmapImage source="@Embed('/assets/icons/combobox_i/11.png')" />
+					<s:VGroup>
+					<s:Label fontWeight="bold">Общий</s:Label>
+					<s:Label>Формат не указан</s:Label>
+					</s:VGroup>
+				</s:HGroup>
+                <s:HGroup name="Числовой">
+					<s:BitmapImage source="@Embed('/assets/icons/combobox_i/22.png')" />
+					<s:Label fontWeight="bold">Числовой</s:Label>
+				</s:HGroup>
+				<s:HGroup name="Денежный">
+					<s:BitmapImage source="@Embed('/assets/icons/combobox_i/33.png')" />
+					<s:Label fontWeight="bold">Денежный</s:Label>
+				</s:HGroup>
+				<s:HGroup name="Финансовый">
+					<s:BitmapImage source="@Embed('/assets/icons/combobox_i/44.png')" />
+					<s:Label fontWeight="bold">Финансовый</s:Label>
+				</s:HGroup>
+				<s:HGroup name="Краткая дата">
+					<s:BitmapImage source="@Embed('/assets/icons/combobox_i/55_66.png')" />
+					<s:Label fontWeight="bold">Краткая дата</s:Label>
+				</s:HGroup>
+				<s:HGroup name="Длинный формат даты">
+					<s:BitmapImage source="@Embed('/assets/icons/combobox_i/55_66.png')" />
+					<s:Label fontWeight="bold">Длинный формат даты</s:Label>
+				</s:HGroup>
+				<s:HGroup name="Время">
+					<s:BitmapImage source="@Embed('/assets/icons/combobox_i/77.png')" />
+					<s:Label fontWeight="bold">Время</s:Label>
+				</s:HGroup>
+				<s:HGroup name="Процентный">
+					<s:BitmapImage source="@Embed('/assets/icons/combobox_i/88.png')" />
+					<s:Label fontWeight="bold">Процентный</s:Label>
+				</s:HGroup>
+				<s:HGroup name="Дробный">
+					<s:BitmapImage source="@Embed('/assets/icons/combobox_i/99.png')" />
+					<s:Label fontWeight="bold">Дробный</s:Label>
+				</s:HGroup>
+				<s:HGroup name="Экспотенциальный">
+					<s:BitmapImage source="@Embed('/assets/icons/combobox_i/10.png')" />
+					<s:Label fontWeight="bold">Экспотенциальный</s:Label>
+				</s:HGroup>
+            </s:ArrayCollection>
+        </s:dataProvider>
+    </s:ComboBox>
+</s:Group>
