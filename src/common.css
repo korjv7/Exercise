@@ -1,0 +1,12 @@
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+		
+		s|BorderContainer {
+            background-image:Embed(source="/assets/images/down1.png");
+            background-image-fill-mode:clip;
+        }
+		
+		s|TextInput {
+            focusColor: white;
+			focusedTextSelectionColor: "0x3169C5";
+        }

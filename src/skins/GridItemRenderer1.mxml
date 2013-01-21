@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:GridItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009"
+                             xmlns:s="library://ns.adobe.com/flex/spark"
+                             xmlns:mx="library://ns.adobe.com/flex/mx">
+							 
+	<s:states>
+        <s:State name="normal"/>
+        <s:State name="hovered"/>
+        <s:State name="down"/>
+    </s:states>
+	
+	<s:BitmapImage source="{data.icon}" horizontalCenter="0" verticalCenter="0"/>
+	
+</s:GridItemRenderer>

@@ -2,7 +2,8 @@
 <s:DefaultGridHeaderRenderer xmlns:fx="http://ns.adobe.com/mxml/2009"
                              xmlns:s="library://ns.adobe.com/flex/spark"
                              xmlns:mx="library://ns.adobe.com/flex/mx">
-    <s:states>
+
+	<s:states>
         <s:State name="normal"/>
         <s:State name="hovered"/>
         <s:State name="down"/>
@@ -10,23 +11,16 @@
     <s:Rect id="fill" left="0" right="0" top="0" bottom="0" horizontalCenter="1" verticalCenter="1">
         <s:fill>
             <s:LinearGradient rotation="90">
-                <s:GradientEntry color="0xFFFFFF"
-                                 color.hovered="0x7FBFFF"
-                                 color.down="0x7FBFFF"
-                                 alpha="0.85"/>
-				<s:GradientEntry color="0xF0F0F0"
-                                 color.hovered="0x3399FF"
-                                 color.down="0x3399FF"
-                                 alpha="0.85"/>
-				<s:GradientEntry color="0xF0F0F0"
-                                 color.hovered="0x2C86E0"
-                                 color.down="0x2C86E0"
-                                 alpha="0.85"/>
-            </s:LinearGradient>
+                <s:GradientEntry color="0xF7F3F7"
+                                 color.hovered="0xF7F3F7"
+                                 color.down="0xF7F3F7"
+                                 alpha="1"/>
+            </s:LinearGradient>	
         </s:fill>
     </s:Rect>
     <s:HGroup left="7" right="7" top="5" bottom="5" gap="2">
-        <s:Group id="labelDisplayGroup" width="100%"/>
+		<s:Group id="labelDisplayGroup" width="100%" height="13"/>
     </s:HGroup>
-	<s:Label id="labelDisplay" horizontalCenter="1" verticalCenter="1" color.hovered="0xFFFFFF" color.down="0xFFFFFF" fontWeight.hovered="bold" fontWeight.down="bold"/>
+	<s:Label id="labelDisplay" left="9" verticalCenter="0" fontSize="11"/>
+	
 </s:DefaultGridHeaderRenderer>

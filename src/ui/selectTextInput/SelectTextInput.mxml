@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+               xmlns:s="library://ns.adobe.com/flex/spark"
+               xmlns:mx="library://ns.adobe.com/flex/mx"
+			   xmlns:textInput="ui.selectTextInput.*"
+			   xmlns:button="ui.selectTextInput.*">
+			   
+	<fx:Script>
+        <![CDATA[
+			import flash.events.MouseEvent;
+			import mx.collections.ArrayCollection;
+			import spark.events.GridEvent;
+			import spark.events.GridSelectionEvent;
+			import spark.components.gridClasses.CellRegion;
+			import mx.managers.PopUpManager;
+			import mx.core.IFlexDisplayObject;
+			import mx.collections.ICollectionView;
+			
+			private var selectionChange:CellRegion;
+			private var mouseDownRowIndex:int;
+			
+			[Bindable]
+			public static var iconPath:Object;
+			
+			[Bindable]
+			private var countRow:Number = 0;
+			
+			[Bindable]
+			private var selectRow:Number = 0;
+			
+			[Bindable]
+			public var dataProvider:ArrayCollection;
+			
+			protected function showForm(event:MouseEvent):void
+            {
+				PopUpManager.addPopUp(myPopUp, this, false);
+            }
+			
+			public function closeWindow(event:MouseEvent):void
+			{
+				PopUpManager.removePopUp(IFlexDisplayObject(event.currentTarget));
+            }
+			
+			private function cancel(event:Event):void
+			{
+                PopUpManager.removePopUp(myPopUp);
+				DG.clearSelection();
+				ButtonOk.enabled = false;
+				personSearchBar.searchText.text = "";
+				countRow = 0;
+				selectRow = 0;
+            }
+			
+			private function OK(event:Event):void
+			{
+				PopUpManager.removePopUp(myPopUp);
+				iconPath = DG.selectedItem.icon;
+				textInputMain2.text = DG.selectedItem.name;
+				DG.clearSelection();
+				ButtonOk.enabled = false;
+				personSearchBar.searchText.text = "";
+				countRow = 0;
+				selectRow = 0;
+            }
+			
+			private function selectionChangingHandler(event:GridSelectionEvent):void
+            {
+				selectionChange = event.selectionChange;
+				mouseDownRowIndex = selectionChange.rowIndex;
+				if(selectionChange != null)
+					ButtonOk.enabled = true;
+            }
+			
+			private function dataGrid_gridMouseDownHandler(event:GridEvent):void
+			{
+				countRow = (DG.dataProvider as ICollectionView).length;
+				if (countRow == 0)
+					selectRow = countRow;
+				else
+				{
+					if(selectionChange)
+						selectRow = selectionChange.rowCount;
+				}
+			}
+			
+			private function dataGrid_gridDoubleHandler():void
+			{
+				PopUpManager.removePopUp(myPopUp);
+				iconPath = DG.selectedItem.icon;
+				textInputMain2.text = DG.selectedItem.name;
+				DG.clearSelection();
+				ButtonOk.enabled = false;
+				personSearchBar.searchText.text = "";
+				countRow = 0;
+				selectRow = 0;
+			}
+        ]]>
+    </fx:Script>
+	
+	<fx:Declarations>
+        <s:TitleWindow id="myPopUp" width="610" height="547" close="cancel(event)" skinClass="skins.windowSkin" cornerRadius="4"
+					   borderVisible="false"
+				dropShadowVisible="false" left="100" top="100">
+					<s:BorderContainer width="100%" height="100%" borderVisible="false" left="1" right="1"/>
+					<textInput:TextInputMx id="personSearchBar" searchListCollection="{dataProvider}" dataGrid="{DG}"/>
+					<s:DataGrid id="DG" dataProvider="{dataProvider}" width="586" height="246" left="12" top="121"
+								skinClass="skins.DataGridSkin" borderVisible="false" caretColor="0xC6DFFD"
+								selectionColor="0xA6CEF5" selectionChanging="selectionChangingHandler(event)"
+								gridMouseDown="dataGrid_gridMouseDownHandler(event)" doubleClickEnabled="true"
+								gridDoubleClick="dataGrid_gridDoubleHandler()">
+						<s:columns>
+							<s:ArrayList>
+								<s:GridColumn itemRenderer="skins.GridItemRenderer1" width="29"/>
+								<s:GridColumn itemRenderer="skins.GridItemRenderer2" dataField="name" headerText="Название"
+								   width="300"/>
+								<s:GridColumn itemRenderer="skins.GridItemRenderer2" dataField="state" headerText=""/>
+							</s:ArrayList>
+						</s:columns>
+					</s:DataGrid>
+					<s:Label id="label2" text="Выбрано {selectRow} из {countRow}." left="16" top="379" fontSize="11.45"/>
+					<button:IconButton id="ButtonOk" skinClass="ui.selectTextInput.ButtonOkSkin" enabled="false"
+							click="OK(event)" height="23" width="84" top="448" left="311"/>
+					<button:IconButton skinClass="ui.selectTextInput.ButtonCancelSkin" click="cancel(event)" height="23"
+							width="84" top="448" left="401"/>
+		</s:TitleWindow>
+    </fx:Declarations>
+	
+    <s:HGroup horizontalCenter="0" verticalCenter="0" gap="0">
+		<textInput:TextInputAs id="textInputMain2" height="20" width="131" fontSize="11" borderColor="0x639ACE"
+				   textDecoration="underline"/>
+        <button:IconButton skinClass="ui.selectTextInput.ButtonSkin" click="showForm(event)" height="20" width="21"/>
+    </s:HGroup>
+</s:Group>

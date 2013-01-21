@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+               xmlns:s="library://ns.adobe.com/flex/spark" 
+               xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:search="ui.selectTextInput.*">
+
+		<fx:Style source="common.css"/>
+		
+		<search:SelectTextInput verticalCenter="0" horizontalCenter="0">
+                <search:dataProvider>
+                        <s:ArrayCollection id="dialogData">
+                                <fx:Object icon="@Embed(source='/assets/images/icons/airport.png')" name="Helena Regional Airport" state="Montana"/>
+                                <fx:Object icon="@Embed(source='/assets/images/icons/bank.png')" name="Commerce Bank" state="Missouri"/>
+                                <fx:Object icon="@Embed(source='/assets/images/icons/office.png')" name="Office Depot" state="Florida"/>
+                                <fx:Object icon="@Embed(source='/assets/images/icons/person.png')" name="Athletic Commission" state="Nevada"/>
+                                <fx:Object icon="@Embed(source='/assets/images/icons/rent.png')" name="MEM Property Management" state="New York"/>
+                        </s:ArrayCollection>
+                </search:dataProvider>
+        </search:SelectTextInput>
+		
+</s:Application>
