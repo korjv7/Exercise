@@ -4,7 +4,6 @@
                xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:search="ui.selectTextInput.*">
 
 		<fx:Style source="common.css"/>
-		
 		<search:SelectTextInput verticalCenter="0" horizontalCenter="0">
                 <search:dataProvider>
                         <s:ArrayCollection id="dialogData">
@@ -16,5 +15,4 @@
                         </s:ArrayCollection>
                 </search:dataProvider>
         </search:SelectTextInput>
-		
 </s:Application>
